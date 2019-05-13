@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FIFAspillere</title>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBrP2xdDivk9IFUJWp6kQQj87wvZTFJYA0",
+        authDomain: "fifaspillere.firebaseapp.com",
+        databaseURL: "https://fifaspillere.firebaseio.com",
+        projectId: "fifaspillere",
+        storageBucket: "fifaspillere.appspot.com",
+        messagingSenderId: "110269735802"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <link rel="stylesheet" href="fifa.css">
+
+  </head>
+  <body>
+    <header>
+      <h1>FIFA 19 SPILLERE</h1>
+    </header>
+
+
+    <button type="button" name="button" onclick="hoyestRating()">høyeste 100</button>
+
+    <button type="button" name="button" onclick="hoyestSkill()">beste skillers</button>
+
+    <main>
+      <center>
+        <section id="secPlayers">
+
+        </section>
+      </center>
+    </main>
+
+    <script type="text/javascript">
+
+    const db = firebase.database();
+    const players = db.ref("players");
+
+    const secPlayers = document.querySelector("#secPlayers");
+
+    function visPlayer(snapshot){
+      console.log(snapshot.val());
+      let players = snapshot.val();
+
+      //snu rekkefølgen
+      let nySec = document.createElement("div");
+
+      nySec.innerHTML += `
+        <div>
+          <h1>${players.Name}: ${players.Overall}</h1>
+          <img src=${players.Photo}>
+          <p><b>posisjon:</b> ${players.Position}</p>
+          <p><b>skill moves:</b> ${players["Skill Moves"]}</p>
+          <p><b>fot:</b> ${players["Preferred Foot"]}</p>
+          <p><b>svak fot:</b> ${players["Weak Foot"]}</p>
+        </div>
+      `
+      secPlayers.insertBefore(nySec,secPlayers.childNodes[0]);
+    }
+
+
+    function hoyestRating(){
+      players
+      .orderByChild("Overall") //sorteringsfunskjon
+      .limitToLast(100) //sorteringsfunksjon
+      .on("child_added",visPlayer);
+    }
+
+    function hoyestSkill(){
+      players
+      .orderByChild("Skill Moves") //sorteringsfunskjon
+      .limitToLast(100) //sorteringsfunksjon
+      .on("child_added",visPlayer);
+    }
+
+    </script>
+  </body>
+</html>

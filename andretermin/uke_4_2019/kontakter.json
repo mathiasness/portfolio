@@ -1,0 +1,14 @@
+{
+  "kontaktliste":{
+    "1":{
+      "firstName": "Mathias",
+      "lastName": "Ness",
+      "telephone": 94030054
+    },
+    "2":{
+      "firstName": "Rotmas Aleksander",
+      "lastName": "Sjøstedt",
+      "telephone": 12345678
+    }
+  }
+}

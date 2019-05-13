@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Player</title>
+
+    <!--Firebase database-->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAD-f9vSCCk5U8PrrAzeur5eL3WQmd5g1Y",
+        authDomain: "prosjekt-uke-11-og-ut.firebaseapp.com",
+        databaseURL: "https://prosjekt-uke-11-og-ut.firebaseio.com",
+        projectId: "prosjekt-uke-11-og-ut",
+        storageBucket: "",
+        messagingSenderId: "883418989597"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+
+  <nav>
+      <section>
+      <a href="index.html"><img src="bilder/logo.png" class="logo" padding="1px"></a>
+      </section>
+      <section>
+        <a href="index.html">HOME</a>
+      </section>
+      <section>
+        <a href="players.html">PLAYERS</a>
+      </section>
+      <section>
+        <a href="community.html">COMMUNITY</a>
+      </section>
+      <section>
+        <a href="shop.html">SHOP</a>
+      </section>
+      <section>
+        <a href="stats.html">STATS</a>
+      </section>
+      <section class="rom">
+
+      </section>
+      <section>
+        <a href="stats.html">Log in</a>
+      </section>
+      <section>
+        <a href="logout.html">Log out</a>
+      </section>
+    </nav>
+    <br><br><br><br><br><br><br>
+    <section class="secDrakt">
+
+    </section>
+
+    <script type="text/javascript">
+    const main = document.querySelector(".secDrakt");
+
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+    let id = url.searchParams.get("id");
+
+    console.log("id");
+
+    const db = firebase.database();
+    const drakter = db.ref("drakter");
+    const valgtDrakt = db.ref("drakter/" + id);
+
+    valgtDrakt.on("value", visDrakt);
+
+    function visDrakt(snap){
+      console.log(snap.val());
+      let key = snap.key;
+      let drakt = snap.val();
+      main.innerHTML = `
+      <article class="buyKit">
+        <div>
+          <section class="kitContainer" style="width:620px; height:620px; background-image: url(${drakt.back})">
+            <div style="width:620px; height: 620px;">
+              <p id="text" class="kitPreview"></p>
+              <p id="number" class="kitPreview"></p>
+            </div>
+          </section>
+        </div>
+        <div>
+          <h1 class="draktNavnKjop">${drakt.name}</h1>
+          <p class="prisPaKjop">Price: ${drakt.pris}</p>
+          <div class="kitInput">
+            <input type="text" id="myText" value="Name">
+            <input type="number" id="myNumber" value="Number">
+            <br>
+            <p>Try putting in your name and number to see what it will look like!</p>
+            <br>
+            <button onclick="myTextFunction()">Try name</button>
+            <button onclick="myNumberFunction()">Try number</button>
+          </div>
+          <h2>Sold out</h2>
+        </div>
+      </article>
+      `;
+    }
+
+      function myTextFunction() {
+      var x = document.getElementById("myText").value;
+      document.getElementById("text").innerHTML = x;
+      }
+
+      function myNumberFunction() {
+      var x = document.getElementById("myNumber").value;
+      document.getElementById("number").innerHTML = x;
+      }
+    </script>
+
+
+  </body>
+</html>

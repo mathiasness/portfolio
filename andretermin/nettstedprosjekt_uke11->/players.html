@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Players</title>
+
+        <!--Firebase database-->
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAD-f9vSCCk5U8PrrAzeur5eL3WQmd5g1Y",
+            authDomain: "prosjekt-uke-11-og-ut.firebaseapp.com",
+            databaseURL: "https://prosjekt-uke-11-og-ut.firebaseio.com",
+            projectId: "prosjekt-uke-11-og-ut",
+            storageBucket: "",
+            messagingSenderId: "883418989597"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+        <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <nav> <!--Navbar-->
+      <section>
+      <a href="index.html"><img src="bilder/logo.png" class="logo" padding="1px"></a>
+      </section>
+      <section>
+        <a href="index.html">HOME</a>
+      </section>
+      <section>
+        <a href="players.html">PLAYERS</a>
+      </section>
+      <section>
+        <a href="community.html">COMMUNITY</a>
+      </section>
+      <section>
+        <a href="shop.html">SHOP</a>
+      </section>
+      <section>
+        <a href="stats.html">STATS</a>
+      </section>
+      <section class="rom">
+
+      </section>
+      <section>
+        <a href="stats.html">Log in</a>
+      </section>
+      <section>
+        <a href="logout.html">Log out</a>
+      </section>
+    </nav>
+
+    <main id="players" style="border-bottom: solid red 5px;">
+      <section class="container">
+        <img src="bilder/pitch.jpg" alt="Pitch">
+        <button id="GK" class="btn" onclick="visKeepere()">Goalkeepers</button>
+        <button id="Defenders" class="btn" onclick="visDefenders()">Defenders</button>
+        <button id="Midfielders" class="btn" onclick="visMidfielders()">Midfielders</button>
+        <button id="Forwards" class="btn" onclick="visForwards()">Forwards</button>
+      </section>
+      <section id="playersHead" style="overflow: scroll; height: 626px;">
+        <h1 id="team">First team players</h1>
+        <div id="spillere">
+
+
+        </div>
+      </section>
+    </main>
+
+
+    <!--players scripting-->
+    <script type="text/javascript">
+      //Referanser til HTML-elementer
+      const spillere = document.querySelector("#spillere");
+
+      //referanser til database og spillere
+      const db = firebase.database();
+      const players = db.ref("players");
+
+      // Javascript-funksjon for å generere HTML-kode for spillere
+      function genererHTML(snapshot){
+        let key = snapshot.key;
+        let player = snapshot.val();
+        spillere.innerHTML +=`
+            <div class="players">
+              <h1>${player.lastName}, ${player.firstName} #${player.draktNummer}</h1>
+              <img src="${player.Bilde}" alt="player image">
+              <p><b>Position:</b> ${player.posisjon}</p>
+              <a href="spiller.html?id=${key}">More</a>
+            </div>
+        `;
+      }
+      //funksjoner for å vise de forskjellige spillerene
+      function visKeepere(){
+        spillere.innerHTML = "";
+        players.orderByChild("posisjon").equalTo("Goalkeeper").on("child_added", genererHTML);
+      }
+      function visDefenders(){
+        spillere.innerHTML = "";
+        players.orderByChild("posisjon").equalTo("Defender").on("child_added", genererHTML);
+      }
+      function visMidfielders(){
+        spillere.innerHTML = "";
+        players.orderByChild("posisjon").equalTo("Midfielder").on("child_added", genererHTML);
+      }
+      function visForwards(){
+        spillere.innerHTML = "";
+        players.orderByChild("posisjon").equalTo("Forward").on("child_added", genererHTML);
+      }
+
+      visKeepere()
+    </script>
+
+  </body>
+</html>

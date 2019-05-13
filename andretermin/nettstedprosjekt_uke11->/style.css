@@ -1,0 +1,582 @@
+/*body*/
+body{
+  margin: 0;
+  font-family: courier, verdana;
+  background-color: white;
+}
+
+/*spans*/
+.cspan2 {
+  grid-column: span 2;
+}
+.cspan3 {
+  grid-column: span 3;
+}
+.rspan2 {
+  grid-row: span 2;
+}
+.rspan3 {
+  grid-row: span 3;
+}
+
+/*-------------------------navigasjonsbar start-----------------------*/
+nav{
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr 2fr 2fr 2fr 7fr 2fr 2fr;
+  background-color: red;
+  grid-gap: 5px;
+  overflow: hidden;
+  align-items: center;
+  z-index: 1000;
+  position: fixed;
+  grid-gap: 10px;
+  text-align: center;
+  -webkit-box-shadow: 0px 2px 2px 0px darkgrey;
+}
+.rom{
+  opacity: 0;
+}
+nav>section>a{
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+nav>section>a:hover{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  text-shadow: 2px 2px 4px #000000;
+}
+.logo{
+  width: 90%;
+  display: block;
+  float: left;
+}
+/*-----------------------navigasjonsbar slutt------------------------*/
+
+
+
+/*-------------------------index side start-------------------------*/
+#maneInForm{
+  width: 100%;
+  display: block;
+}
+#firminoGoal{
+  text-align: center;
+}
+#forsidePoster{
+width: 100%;
+}
+#vanDijkPOTM{
+  width: 100%;
+  display: block;
+}
+#klopp{
+  width: 100%;
+  display: block;
+}
+#bayernVsLfc{
+  display: block;
+  width: 100%;
+}
+
+/*slideshow start*/
+* {box-sizing: border-box;}
+.mySlides{
+  display: none;
+}
+.slidesIMG{
+  vertical-align: middle;
+  width: 100%
+}
+/* Slideshow container */
+.slideshow-container{
+  max-width: 900px;
+  position: relative;
+  margin: auto;
+}
+/* Caption text */
+.text{
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/* Number text (1/3 etc) */
+.numbertext{
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+/* The dots/bullets/indicators */
+.dot{
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active{
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade{
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3.0s;
+  animation-name: fade;
+  animation-duration: 3.0s;
+}
+@-webkit-keyframes fade{
+  from {opacity: .4}
+  to {opacity: 1}
+}
+@keyframes fade{
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px){
+  .text {font-size: 11px}
+}
+/*slideshow slutt*/
+
+/*forside grid*/
+#forsideGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 10px;
+  grid-gap: 15px;
+}
+.forsideGrid{
+  background-color: #474747;
+  border-radius: 5px;
+  border: 2px solid red;
+  color: white;
+}
+/*------------------------index side slutt------------------------*/
+
+
+
+
+/*------------------------players side start---------------------------*/
+.container{
+  position: relative;
+  width: 100%;
+  height: 620px;
+}
+/* Make the image responsive */
+.container>img {
+  width: 100%;
+  height: auto;
+}
+/* Style the button and place it in the middle of the container/image */
+.container>.btn{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #D72421;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/*forskjellige farger og plassering for knappene*/
+.container>#GK{
+  top: 450px;
+  background-color: #00C009;
+}
+.container>#Defenders{
+  top: 300px;
+}
+.container>#Midfielders{
+  top: 175px;
+}
+.container>#Forwards{
+  top: 50px;
+}
+.container>#GK:hover{
+  background-color: #008206;
+}
+.container>.btn:hover{
+  background-color: #820000;
+}
+#team{
+  color: white;
+  background-color: red;
+  border: solid black 1px;
+  border-radius: 5%;
+  font-size: 30px;
+  text-align: center;
+}
+main>#playersHead>#spillere{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+main>#playersHead>#spillere>.players>img{
+  width: 100%;
+}
+
+#players{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 75px;
+}
+header{
+  padding-top: 75px;
+}
+main>#playersHead>#spillere>.players{
+  box-shadow: 4px 4px 50px black;
+  border: 1px solid black;
+  text-align: center;
+}
+/*----------------------players side slutt---------------------*/
+
+
+
+
+/*-------------------Stats side start-------------------------*/
+/*bilde buttons*/
+.statImage{
+  width: 100%;
+  display: block;
+  border: solid red 5px;
+  border-radius: 20px;
+}
+.statImage:hover{
+  width: 102%;
+}
+#statHeader{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#spillerStats{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.players{
+  text-align: center;
+}
+/*-------------------stats side slutt-------------------------*/
+
+
+
+/*-----------------shop side start---------------------------*/
+main>#draktsalg{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 100px;
+  text-align: center;
+  padding: 100px;
+}
+main>#draktsalg>.drakter01>img{
+  width: 100%;
+}
+main>#draktsalg>.drakter01>a{
+  text-decoration: none;
+  color: black;
+}
+main>#draktsalg>.drakter01>a:hover{
+  color: red;
+}
+#kitShopPoster{
+  width: 100%;
+}
+/*-----------------shop side slutt---------------------------*/
+
+
+
+
+
+/*-----------------undersider start---------------------------*/
+.StatsTilSpillere{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 20px;
+}
+.spillerStatBilde{
+  display: block;
+  border: 5px solid red;
+  margin: auto;
+}
+
+
+.buyKit{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.kitContainer>div>#text{
+  position: absolute;
+  font-size: 50px;
+  text-align: center;
+  top: 185px;
+  color: white;
+  left: 18%;
+}
+.kitContainer>div>#number{
+  position: absolute;
+  font-size: 150px;
+  text-align: center;
+  top: 200px;
+  color: white;
+  left: 19%;
+}
+.kitInput{
+  border: 1px solid black;
+  width: 300px;
+  padding: 20px;
+}
+h2{
+  color: darkred;
+}
+/*-----------------undersider slutt---------------------------*/
+
+
+
+
+/*---------------------footer---------------------------------*/
+footer{
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  color: grey;
+  font-size: 12px;
+  line-height: 10px;
+  padding-left: 40px;
+}
+/*---------------------footer slutt----------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------mobilversjon-------------------------------*/
+
+@media(max-width:600px){
+  /*-------------------------navigasjonsbar start-----------------------*/
+  nav{
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr 2fr 2fr 2fr 4fr 2fr 2fr;
+    grid-gap: 5px;
+  }
+  nav>section>a{
+    font-size: 12px;
+  }
+  nav>section>a:hover{
+    font-size: 16px;
+    text-shadow: 2px 2px 4px #000000;
+  }
+  .logo{
+    width: 100%;
+  }
+  /*-----------------------navigasjonsbar slutt------------------------*/
+
+
+
+  /*-------------------------index side start-------------------------*/
+  /*slideshow start*/
+  /* Number text (1/3 etc) */
+  .numbertext{
+    font-size: 12px;
+    padding: 5px 9px;
+    top: 0;
+  }
+  /* The dots/bullets/indicators */
+  .dot{
+    height: 7px;
+    width: 7px;
+    margin: 0 0px;
+  }
+  .active{
+    background-color: #717171;
+  }
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px){
+    .text {font-size: 11px}
+  }
+  /*slideshow slutt*/
+
+  /*forside grid*/
+  #forsideGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 10px;
+    grid-gap: 15px;
+  }
+  .forsideGrid{
+    border-radius: 5px;
+  }
+  .mobilSpan{
+    grid-column: span 2;
+  }
+  /*------------------------index side slutt------------------------*/
+
+
+
+
+  /*------------------------players side start---------------------------*/
+  .container{
+    height: 520px;
+  }
+  /* Make the image responsive */
+  .container>img {
+    width: 100%;
+    height: auto;
+  }
+  /* Style the button and place it in the middle of the container/image */
+  .container>.btn{
+    font-size: 10px;
+    padding: 12px 24px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  /*forskjellige farger og plassering for knappene*/
+  .container>#GK{
+    top: 350px;
+  }
+  .container>#Defenders{
+    top: 250px;
+  }
+  .container>#Midfielders{
+    top: 130px;
+  }
+  .container>#Forwards{
+    top: 40px;
+  }
+  #team{
+    font-size: 25px;
+    text-align: center;
+  }
+  main>#playersHead>#spillere{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  #players{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 75px;
+  }
+  header{
+    padding-top: 75px;
+  }
+  /*----------------------players side slutt---------------------*/
+
+
+
+
+  /*-------------------Stats side start-------------------------*/
+  .statImage:hover{
+    width: 102%;
+  }
+  #statHeader{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #spillerStats{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  /*-------------------stats side slutt-------------------------*/
+
+
+
+  /*-----------------shop side start---------------------------*/
+  main>#draktsalg{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 100px;
+    text-align: center;
+    padding: 100px;
+  }
+  main>#draktsalg>.drakter01>img{
+    width: 100%;
+  }
+  main>#draktsalg>.drakter01>a{
+    text-decoration: none;
+    color: black;
+  }
+  main>#draktsalg>.drakter01>a:hover{
+    color: red;
+  }
+  /*-----------------shop side slutt---------------------------*/
+
+
+
+
+
+  /*-----------------undersider start---------------------------*/
+  .StatsTilSpillere{
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .buyKit{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .kitContainer>div>#text{
+    left: 42%;
+  }
+  .kitContainer>div>#number{
+    left: 45%;
+  }
+  .kitInput{
+    margin-left: 120px;
+  }
+  h2{
+    margin-left: 120px;
+  }
+  .draktNavnKjop{
+    margin-left: 120px;
+  }
+  .prisPaKjop{
+    margin-left: 120px;
+  }
+  /*-----------------undersider slutt---------------------------*/
+
+
+
+
+  /*---------------------footer---------------------------------*/
+  footer{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    color: grey;
+    font-size: 9px;
+    line-height: 10px;
+    padding-left: 40px;
+  }
+  /*---------------------footer slutt----------------------------*/
+}
+/*-----------------------mobilversjon----------------------------*/

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LFC fan page</title>
+
+    <!--Firebase database-->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAD-f9vSCCk5U8PrrAzeur5eL3WQmd5g1Y",
+        authDomain: "prosjekt-uke-11-og-ut.firebaseapp.com",
+        databaseURL: "https://prosjekt-uke-11-og-ut.firebaseio.com",
+        projectId: "prosjekt-uke-11-og-ut",
+        storageBucket: "",
+        messagingSenderId: "883418989597"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+
+    <script type="text/javascript">
+    // Sign out from firebase.
+    firebase.auth().signOut().then(function() {
+    // Redirect to google sign out.
+    window.location.assign('index.html');
+    }).catch(function(error) {
+    // Error occurred.
+    });
+    </script>
+
+  </body>
+</html>

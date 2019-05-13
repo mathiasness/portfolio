@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LFC fan page</title>
+
+    <!--Firebase database-->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAD-f9vSCCk5U8PrrAzeur5eL3WQmd5g1Y",
+        authDomain: "prosjekt-uke-11-og-ut.firebaseapp.com",
+        databaseURL: "https://prosjekt-uke-11-og-ut.firebaseio.com",
+        projectId: "prosjekt-uke-11-og-ut",
+        storageBucket: "",
+        messagingSenderId: "883418989597"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <nav> <!--Navbar-->
+      <section>
+      <a href="index.html"><img src="bilder/logo.png" class="logo" padding="1px"></a>
+      </section>
+      <section>
+        <a href="index.html">HOME</a>
+      </section>
+      <section>
+        <a href="players.html">PLAYERS</a>
+      </section>
+      <section>
+        <a href="community.html">COMMUNITY</a>
+      </section>
+      <section>
+        <a href="shop.html">SHOP</a>
+      </section>
+      <section>
+        <a href="stats.html">STATS</a>
+      </section>
+      <section class="rom">
+
+      </section>
+      <section>
+        <a href="login.html">Login</a>
+      </section>
+      <section>
+        <a href="logout.html">Logout</a>
+      </section>
+    </nav>
+
+    <header id="indexHeader">
+      <img src="bilder/wallpaper.png" alt="forsideBilde" id="forsidePoster">
+    </header>
+
+    <img src="bilder/thisMeansMore.jpeg" alt="Motto" style="width: 100%; margin-top: 20px; margin-bottom: 20px;">
+
+    <main id="forsideGrid">
+      <section class="forsideGrid cspan2 rspan2">
+        <h1 id="firminoGoal">Throwback to THAT crucial Firmino goal vs PSG</h1>
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="bilder/firminoshot.jpg" class="slidesIMG">
+            <div class="text">Firmino V PSG 18.09.1028</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="bilder/firminocelebrate.jpg" class="slidesIMG">
+            <div class="text">Firmino V PSG 18.09.1028</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="bilder/firminoafter.jpg" class="slidesIMG">
+            <div class="text">Firmino V PSG 18.09.1028</div>
+          </div>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </section>
+      <section class="forsideGrid">
+          <img src="bilder/maneVmunchen.webp" alt="Sadio mane in form" id="maneInForm">
+          <h1>Sadio Mane tipped to race for the EPL golden Boot</h1>
+      </section>
+      <section class="forsideGrid rspan2">
+        <img src="bilder/vanDijkPOTM.jpg" alt="Van Dijk player of the year?" id="vanDijkPOTM">
+        <h1>Van Dijk to become EPL player of the year 2018/19?</h1>
+      </section>
+      <section class="forsideGrid">
+        <img src="bilder/klopp.png" alt="klopp" id="klopp">
+        <h1>Jürgen Klopp on fantastic Anfield athmosphere: I love how Anfield always believe</h1>
+      </section>
+      <section class="forsideGrid mobilSpan">
+        <a href="https://www.youtube.com/watch?v=DgeH3YWC2nA" target="_blank"><img src="bilder/highlightsVSbayern.png" alt="Highlights vs bayern" style="width: 100%;"></a>
+        <h1>Highlights from the night we knocked out Bayern Munchen to progress to the quarter finals</h1>
+      </section>
+    </main>
+    <br>
+    <hr>
+    <br>
+    <footer>
+      <section>
+        <h1>Info</h1>
+        <p>LFC fanpage</p>
+        <p>Not the offical liverpool FC website</p>
+        <p>Established in 2019</p>
+        <p>Made by real fans for real fans</p>
+      </section>
+      <section class="rom">
+
+      </section>
+      <section class="kontaktOss">
+        <h1>contact us</h1>
+        <p>LFC fanpage</p>
+        <p>Elias Smiths vei 15</p>
+        <p>1337 Sandvika</p>
+        <p>TLF: 94030054</p>
+      </section>
+    </footer>
+    <script> //slideshow scripting
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 4000); // Change image every 2 seconds
+    }
+    </script>
+  </body>
+</html>

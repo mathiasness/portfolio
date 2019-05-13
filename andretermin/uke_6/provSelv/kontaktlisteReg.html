@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Registrering</title>
+
+    <link rel="stylesheet" href="kontaktliste.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAoxVskAqvgr0PX5gb4B8vGrEj3Wj5dlt4",
+        authDomain: "kontaktliste-384e7.firebaseapp.com",
+        databaseURL: "https://kontaktliste-384e7.firebaseio.com",
+        projectId: "kontaktliste-384e7",
+        storageBucket: "kontaktliste-384e7.appspot.com",
+        messagingSenderId: "220425556995"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+  </head>
+  <body>
+    <section>
+        <form id="skjema">
+            <input id="inpNavn" type="text" required placeholder="navn">
+            <input id="inpTelefon" type="text" required placeholder="telefon">
+            <input id="inpEpost" type="text" required placeholder="epost">
+            <button type="submit">Registrer kontakt</button>
+        </form>
+    </section>
+    <section id="secKontakter">
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>

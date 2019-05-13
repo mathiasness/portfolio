@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Player</title>
+
+    <!--Firebase database-->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAD-f9vSCCk5U8PrrAzeur5eL3WQmd5g1Y",
+        authDomain: "prosjekt-uke-11-og-ut.firebaseapp.com",
+        databaseURL: "https://prosjekt-uke-11-og-ut.firebaseio.com",
+        projectId: "prosjekt-uke-11-og-ut",
+        storageBucket: "",
+        messagingSenderId: "883418989597"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+
+  <nav>
+      <section>
+      <a href="index.html"><img src="bilder/logo.png" class="logo" padding="1px"></a>
+      </section>
+      <section>
+        <a href="index.html">HOME</a>
+      </section>
+      <section>
+        <a href="players.html">PLAYERS</a>
+      </section>
+      <section>
+        <a href="community.html">COMMUNITY</a>
+      </section>
+      <section>
+        <a href="shop.html">SHOP</a>
+      </section>
+      <section>
+        <a href="stats.html">STATS</a>
+      </section>
+      <section class="rom">
+
+      </section>
+      <section>
+        <a href="stats.html">Log in</a>
+      </section>
+      <section>
+        <a href="logout.html">Log out</a>
+      </section>
+    </nav>
+    <br><br><br><br><br><br><br>
+    <section class="secSpiller">
+
+    </section>
+
+    <script type="text/javascript">
+    const main = document.querySelector(".secSpiller");
+
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+    let id = url.searchParams.get("id");
+
+    console.log("id");
+
+    const db = firebase.database();
+    const player = db.ref("players");
+    const valgtPlayer = db.ref("players/" + id);
+
+    valgtPlayer.on("value", visPlayer);
+
+    function visPlayer(snap){
+      console.log(snap.val());
+      let key = snap.key;
+      let player = snap.val();
+      main.innerHTML = `
+      <article class="StatsTilSpillere">
+        <div>
+          <img src=${player.Bilde} class="spillerStatBilde">
+        </div>
+        <div class="spillernsStats">
+          <H1>${player.lastName}, ${player.firstName} #${player.draktNummer}</H1>
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  STATNAME
+                </th>
+                <th>
+                  VALUE
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  age:
+                </td>
+                <td>
+                  ${player.alder}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  nationality:
+                </td>
+                <td>
+                  ${player.nasjonalitet}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  signed:
+                </td>
+                <td>
+                  ${player.signertAr}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  position:
+                </td>
+                <td>
+                  ${player.posisjon}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  goals:
+                </td>
+                <td>
+                  ${player.antallMal}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  assists:
+                </td>
+                <td>
+                  ${player.antallAssist}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  cleansheets:
+                </td>
+                <td>
+                  ${player.cleanSheets}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  passes
+                </td>
+                <td>
+                  ${player.pasninger}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  matches played:
+                </td>
+                <td>
+                  ${player.kamperSpilt}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+      `;
+    }
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,39 @@
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: yellow;
+}
+@media(max-width:1400px){
+  main{
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    background-color: yellow;
+  }
+}
+
+@media(max-width:1000px){
+  main{
+    grid-template-columns:1fr 1fr 1fr;
+    background-color: green;
+  }
+}
+@media(max-width:800px){
+  main{
+    grid-template-columns:1fr 1fr;
+    background-color: red;
+  }
+}
+@media(max-width:600px){
+  main{
+    grid-template-columns:1fr;
+    background-color: blue;
+  }
+}
+img{
+  width: 100%
+}
+body{
+  background-image: url("https://www.itromso.no/nyhet/article13683659.ece/u179w3/ALTERNATES/w980-default/23nyhAudun1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: darkblue;
+}

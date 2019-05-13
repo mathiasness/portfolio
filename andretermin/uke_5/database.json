@@ -1,0 +1,56 @@
+{
+  "1":{
+    "svar": "En primærnøkkel er noe vi bruker i en database slik at vi raskt kan finne opplysninger om et bestemt objekt"
+  },
+  "2":{
+    "a":{
+      "svar": "Elever på en skole burde være navnet på enkelt elevene"
+    },
+    "b":{
+      "svar": "fritidsbåter burde ha båtmodellen som primærnøkkel"
+    },
+    "c":{
+      "svar": "Planter burde ha navnet til planten"
+    },
+    "d":{
+      "svar": "Kontaktene mine burde ha navnet deres som primærnøkkel, kanskje putte etternavn først"
+    },
+    "e":{
+      "svar": "Stjerner er litt vanskelige å gi navn på så kanskje stjernens posisjon passer bedre som primærnøkkel?"
+    }
+  },
+  "3":{
+    "svar": "kandidatnøkler er bare de vanligste og beste forslagene til primærnøkler"
+  },
+  "4":{
+    "svar": "Fremmednøkler er når du bruker en id på nytt for å unngå dobbeltlagring"
+  },
+  "5":{
+    "svar": "Normalisering er teknikker som blir brukt for å unngå dobbeltlagring"
+  },
+  "6":{
+    "spillere":{
+      "mathias69":{
+        "highscore": 19950643,
+        "sist aktiv": "1 time siden",
+        "mail": "mathias1389@gmail.com"
+      },
+      "Thomasvirgin88":{
+        "highscore": 22,
+        "sist aktiv": "sekunder siden",
+        "mail": "thomas@virgin.org"
+      },
+      "jokkeElskerBitchen":{
+        "highscore": 1,
+        "sist aktiv": "kicked 1 uke siden",
+        "mail": "jokkeElskerBitchen@tennisshappa.org"
+      }
+    },
+    "meldinger":{
+      "001":{
+        "brukerID": "mathias69",
+        "tekst": "hei hei åssen går det?"
+      }
+    }
+  }
+}

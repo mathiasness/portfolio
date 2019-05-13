@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LFC fan page</title>
+
+<!--Firebase database-->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAD-f9vSCCk5U8PrrAzeur5eL3WQmd5g1Y",
+        authDomain: "prosjekt-uke-11-og-ut.firebaseapp.com",
+        databaseURL: "https://prosjekt-uke-11-og-ut.firebaseio.com",
+        projectId: "prosjekt-uke-11-og-ut",
+        storageBucket: "",
+        messagingSenderId: "883418989597"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <nav> <!--Navbar-->
+      <section>
+      <a href="index.html"><img src="bilder/logo.png" class="logo" padding="1px"></a>
+      </section>
+      <section>
+        <a href="index.html">HOME</a>
+      </section>
+      <section>
+        <a href="players.html">PLAYERS</a>
+      </section>
+      <section>
+        <a href="community.html">COMMUNITY</a>
+      </section>
+      <section>
+        <a href="shop.html">SHOP</a>
+      </section>
+      <section>
+        <a href="stats.html">STATS</a>
+      </section>
+      <section class="rom">
+
+      </section>
+      <section>
+        <a href="login.html">Log in</a>
+      </section>
+      <section>
+        <a href="logout.html">Log out</a>
+      </section>
+    </nav>
+    <br><br>
+    <header id="statHeader">
+      <section id="goals">
+        <img src="bilder/scoringStat.jpg" alt="" class="statImage" onclick="visTopscorers()">
+      </section>
+      <section id="assist">
+        <img src="bilder/assistStat.jpg" alt="" class="statImage" onclick="visAssisters()">
+      </section>
+      <section id="cleanSheets">
+        <img src="bilder/cleanSheetStat.jpg" alt="" class="statImage" onclick="visCleanSheets()">
+      </section>
+      <section id="pasninger">
+        <img src="bilder/passingStat.jpg" alt="" class="statImage" onclick="visPassing()">
+      </section>
+
+    </header>
+    <br><hr><br><br><br>
+    <main id="spillerStats">
+
+    </main>
+
+    <script type="text/javascript">
+      //Referanser til HTML-elementer
+      const spillerStats = document.querySelector("#spillerStats");
+
+      //referanser til database og spillere
+      const db = firebase.database();
+      const players = db.ref("players");
+
+
+
+      // Javascript-funksjon for å generere HTML-kode for målskårere
+      function genererGoalSnudd(snapshot){
+        let key = snapshot.key;
+        let player = snapshot.val();
+        spillerStats.innerHTML =`
+            <div class="players">
+              <h1>${player.lastName}, ${player.firstName} #${player.draktNummer}</h1>
+              <img src="${player.Bilde}" alt="player image">
+              <p><b>Position:</b> ${player.posisjon}</p>
+              <p><b>Goals:</b> ${player.antallMal}</p>
+              <a href="spiller.html?id=${key}">More</a>
+            </div>
+        ` + spillerStats.innerHTML;
+      }
+
+      function visTopscorers(){
+        spillerStats.innerHTML = "";
+        players.orderByChild("antallMal").limitToLast(4).on("child_added", genererGoalSnudd);
+      }
+      //målskårere slutt
+
+
+      // Javascript-funksjon for å generere HTML-kode for assistspillere
+      function genererAssistSnudd(snapshot){
+        let key = snapshot.key;
+        let player = snapshot.val();
+        spillerStats.innerHTML =`
+            <div class="players">
+              <h1>${player.lastName}, ${player.firstName} #${player.draktNummer}</h1>
+              <img src="${player.Bilde}" alt="player image">
+              <p><b>Position:</b> ${player.posisjon}</p>
+              <p><b>Assists:</b> ${player.antallAssist}</p>
+              <a href="spiller.html?id=${key}">More</a>
+            </div>
+        ` + spillerStats.innerHTML;
+      }
+
+      function visAssisters(){
+        spillerStats.innerHTML = "";
+        players.orderByChild("antallAssist").limitToLast(4).on("child_added", genererAssistSnudd);
+      }
+      //assists slutt
+
+
+      // Javascript-funksjon for å generere HTML-kode for cleanSheetspillere
+      function genererCleanSheetsSnudd(snapshot){
+        let key = snapshot.key;
+        let player = snapshot.val();
+        spillerStats.innerHTML =`
+            <div class="players">
+              <h1>${player.lastName}, ${player.firstName} #${player.draktNummer}</h1>
+              <img src="${player.Bilde}" alt="player image">
+              <p><b>Position:</b> ${player.posisjon}</p>
+              <p><b>Cleansheets:</b> ${player.cleanSheets}</p>
+              <a href="spiller.html?id=${key}">More</a>
+            </div>
+        ` + spillerStats.innerHTML;
+      }
+
+      function visCleanSheets(){
+        spillerStats.innerHTML = "";
+        players.orderByChild("cleanSheets").limitToLast(4).on("child_added", genererCleanSheetsSnudd);
+      }
+      //cleanSheets slutt
+
+
+      // Javascript-funksjon for å generere HTML-kode for passingspillere
+      function genererPassingSnudd(snapshot){
+        let key = snapshot.key;
+        let player = snapshot.val();
+        spillerStats.innerHTML =`
+            <div class="players">
+              <h1>${player.lastName}, ${player.firstName} #${player.draktNummer}</h1>
+              <img src="${player.Bilde}" alt="player image">
+              <p><b>Position:</b> ${player.posisjon}</p>
+              <p><b>Passes:</b> ${player.pasninger}</p>
+              <a href="spiller.html?id=${key}">More</a>
+            </div>
+        ` + spillerStats.innerHTML;
+      }
+
+      function visPassing(){
+        spillerStats.innerHTML = "";
+        players.orderByChild("pasninger").limitToLast(4).on("child_added", genererPassingSnudd);
+      }
+      //passing slutt
+    </script>
+  </body>
+</html>

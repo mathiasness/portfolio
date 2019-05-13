@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shop</title>
+
+        <!--Firebase database-->
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAD-f9vSCCk5U8PrrAzeur5eL3WQmd5g1Y",
+            authDomain: "prosjekt-uke-11-og-ut.firebaseapp.com",
+            databaseURL: "https://prosjekt-uke-11-og-ut.firebaseio.com",
+            projectId: "prosjekt-uke-11-og-ut",
+            storageBucket: "",
+            messagingSenderId: "883418989597"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+        <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav> <!--Navbar-->
+      <section>
+      <a href="index.html"><img src="bilder/logo.png" class="logo" padding="1px"></a>
+      </section>
+      <section>
+        <a href="index.html">HOME</a>
+      </section>
+      <section>
+        <a href="players.html">PLAYERS</a>
+      </section>
+      <section>
+        <a href="community.html">COMMUNITY</a>
+      </section>
+      <section>
+        <a href="shop.html">SHOP</a>
+      </section>
+      <section>
+        <a href="stats.html">STATS</a>
+      </section>
+      <section class="rom">
+
+      </section>
+      <section>
+        <a href="stats.html">Log in</a>
+      </section>
+      <section>
+        <a href="logout.html">Log out</a>
+      </section>
+    </nav>
+    <header>
+      <img src="bilder/drakter/community.jpeg" alt="poster for kit shop" id="kitShopPoster">
+    </header>
+    <main>
+      <section id="draktsalg">
+
+      </section>
+    </main>
+
+
+    <script type="text/javascript">
+      //Referanser til HTML-elementer
+      const draktSalg = document.querySelector("#draktsalg");
+
+      //referanser til database og drakter
+      const db = firebase.database();
+      const drakter = db.ref("drakter");
+
+      // Javascript-funksjon for å generere HTML-kode for draktSalg
+      function genererHTML(snapshot){
+        let key = snapshot.key;
+        let drakter = snapshot.val();
+        draktSalg.innerHTML +=`
+            <div class="drakter01">
+              <img src="${drakter.front}" alt="drakter image">
+              <a href="kitsale.html?id=${key}"><h1>${drakter.name}</h1></a>
+              <p><b>Price:</b> ${drakter.pris}</p>
+            </div>
+        `;
+      }
+      //funksjon for å vise draktene
+      function visDrakter(){
+        draktSalg.innerHTML = "";
+        drakter.orderByChild("pris").on("child_added", genererHTML);
+      }
+
+      visDrakter()
+    </script>
+  </body>
+</html>

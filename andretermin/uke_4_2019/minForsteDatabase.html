@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Min Første Database</title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDdoE430eWBPJMSgxGYBOkiWDM1BMOzbiA",
+        authDomain: "minforstedatabase96.firebaseapp.com",
+        databaseURL: "https://minforstedatabase96.firebaseio.com",
+        projectId: "minforstedatabase96",
+        storageBucket: "minforstedatabase96.appspot.com",
+        messagingSenderId: "607144822311"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+  </head>
+  <body>
+
+    <form class="" method="post">
+      <label id="inpNavn" for="inpNavn">Navn:</label>
+      <input type="text" name="navn" value="" placeholder="navn">
+      <label id="inpTelefon" for="inpTelefon">Telefon:</label>
+      <input type="text" name="telefon" value="" placeholder="tlf">
+      <button id="btnKnapp" type="button" name="button">send inn</button>
+    </form>
+
+
+    <script type="text/javascript">
+
+      const inpNavn = document.querySelector("#inpNavn");
+      const inpTelefon = document.querySelector("#inpTelefon");
+      const btnKnapp = document.querySelector("#btnKnapp");
+
+      btnKnapp.onclick = function(event){
+        event.preventDefault();
+        let navn = inpNavn.value;
+        let telefon = inpTelefon.value;
+        kontaktliste.push(
+          {
+            "name": navn,
+            "telefon": telefon
+          }
+        );
+      }
+
+      const db = firebase.database();
+      const kontaktliste = db.ref("kontaktliste")
+
+      kontaktliste.push(
+        {
+          "fisrtName": "Mathias",
+          "lastName": "Ness",
+          "telephone": 94030054
+        }
+      )
+    </script>
+
+  </body>
+</html>
