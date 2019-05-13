@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Enekel grid</title>
+
+    <style media="screen">
+
+    main{
+      background-color: red;
+      width: 700px;
+
+    }
+
+      main{
+        display: grid;
+        /* grid-template-columns: 400px 100px 300px;eksempel kolonne */
+        grid-template-columns: 4fr 1fr 2fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+
+      }
+      main>article{
+        background-color: cyan;
+
+      }
+    </style>
+
+  </head>
+
+
+  <body>
+
+    <header>
+      <h1>Enkel grid</h1>
+    </header>
+
+    <main>
+
+
+
+      <br>
+
+      <article>Grid element 1</article>
+      <article>Grid element 2</article>
+      <article>Grid element 3</article>
+      <article>Grid element 4</article>
+      <article>Grid element 5</article>
+      <article>Grid element 6</article>
+      <article>Grid element 7</article>
+      <article>Grid element 8</article>
+
+      </article>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+  </body>
+</html>

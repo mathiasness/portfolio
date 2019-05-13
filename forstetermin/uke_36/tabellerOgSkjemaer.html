@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Tabeller og Skjemaer</title>
+</head>
+
+<body style="background-color:yellow">
+  <center>
+
+    <h1 style="background-color:black; color: white; font-size:50px; padding:80px; border-style:solid; margin:30px">
+        Tabeller og skjemaer om musikk
+      </h1>
+
+    <p><b>Lenker</b></p>
+    <a href="index.html">Hjem</a>
+
+    <h2>Tabell</h2>
+
+    <table style="text-align:left; border-style:solid">
+      <thead>
+        <tr>
+          <th>Album</th>
+          <th>Artist</th>
+          <th>År</th>
+          <th>Beste sang</th>
+          <th>lenker</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Issa album</td>
+          <td>21 Savage</td>
+          <td>2017</td>
+          <td>Bank account</td>
+          <td><a href="https://genius.com/albums/21-savage/Issa-album" target="_blank">Genius</a></td>
+        </tr>
+
+        <tr>
+          <td>Astroworld</td>
+          <td>Travis Scott</td>
+          <td>2018</td>
+          <td>Yosemite</td>
+          <td><a href="https://genius.com/albums/Travis-scott/Astroworld" target="_blank">Genius</a></td>
+        </tr>
+
+        <tr>
+          <td>Surrender your soul</td>
+          <td>Killy</td>
+          <td>2018</td>
+          <td>No sad no bad</td>
+          <td><a href="https://genius.com/albums/Killy/Surrender-your-soul" target="_blank">Genius</a></td>
+        </tr>
+
+        <tr>
+          <td>Life's a trip</td>
+          <td>Trippie Redd</td>
+          <td>2018</td>
+          <td>Taking a walk</td>
+          <td><a href="https://genius.com/albums/Trippie-redd/Life-s-a-trip" target="_blank">Genius</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Skjema</h3>
+
+    <form action="register.html">
+      <label>Navn:</label>
+      <input type="text" name="navn" required>
+      <br>
+
+      <label>alder:</label>
+      <input type="number" name="alder" required>
+      <br>
+
+      <label>Hvilket album er best?</label>
+      <br>
+
+      <input type="radio" name="IssaAlbum" value="rbMat"><label>Issa album</label>
+      <input type="radio" name="Astroworld" value="rbMat"><label>Astroworl</label>
+      <input type="radio" name="SurrenderUrSoul" value="rbMat"><label>Surrender your soul</label>
+      <input type="radio" name="LifesATrip" value="rbMat"><label>Life's a trip</label>
+      <br>
+
+      <label>Hvilken artist er best?</label>
+      <select name="VelgDrikke" required>
+          <option value="">velg artist</option>
+          <option value="21Savage">21 Savage</option>
+          <option value="TravisScott">Travis Scott</option>
+          <option value="Killy">Killy</option>
+          <option value="TrippieRedd">Trippie Redd</option>
+        </select>
+      <br>
+
+      <button type="submit">Send inn</button>
+    </form>
+
+  </center>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Prøv selv</title>
+    <style media="screen">
+      #tabell1{
+        border-collapse: collapse;
+      }
+      #tabell1head{
+        background-color: darkblue;
+        color: white;
+      }
+      #tabell1body{
+        background-color: lightblue;
+      }
+      td{
+        border: solid black 1px;
+        color: black;
+      }
+      td:hover{
+        background-color: blue;
+        color:white;
+      }
+      th{
+        border: solid black 1px;
+      }
+      #img1{
+        display: block;
+        width: 400px;
+        transition: 1s;
+      }
+      #img1:hover{
+        transform: scale(2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>prøv selv</h1>
+    </header>
+
+    <main>
+      <table id="tabell1">
+        <thead id="tabell1head">
+          <tr>
+           <th>År</th>
+           <th>Låt</th>
+           <th>Artist</th>
+          </tr>
+        </thead>
+        <tbody id="tabell1body">
+          <tr>
+            <td>2018</td>
+            <td>Taking A Walk</td>
+            <td>Trippie Redd</td>
+          </tr>
+          <tr>
+            <td>2018</td>
+            <td>Anti Everybody</td>
+            <td>Killy</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <br>
+
+      <img id="img1"src="http://en.es-static.us/upl/2013/09/sunrise-red-sea-Graham-Telford-e1489764712368.jpg" alt="sunset">
+    </main>
+  </body>
+</html>

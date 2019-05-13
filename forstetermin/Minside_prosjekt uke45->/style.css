@@ -1,0 +1,344 @@
+body {
+  margin: 0;
+  font-family: courier;
+  background-color: #f3f3f3;
+  color: black;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: #363636;
+  grid-gap: 5px;
+  overflow: visible;
+  position: fixed;
+  top: 0;
+}
+
+header>section>a {
+  text-decoration: none;
+  color: white;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 33px;
+  padding-bottom: 33px;
+  overflow: hidden;
+}
+
+header>section>div>a {
+  text-decoration: none;
+  color: white;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+header>section>a:hover {
+  background-color: #929292;
+}
+
+header>.lenke {
+  align-self: center;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  align-self: center;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 24px 20px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+header a:hover, .dropdown:hover .dropbtn {
+  background-color: #929292;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 116px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 99999;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.logo {
+  width: 200px;
+}
+
+.handlekurv {
+  width: 75px;
+  margin-top: 15px;
+}
+
+.usynlig {
+  opacity: 0;
+}
+
+.logolenke {
+  padding: 0;
+}
+
+.handlekurvlenke {
+  padding: 0;
+}
+
+main {
+  margin-top: 84px;
+}
+
+#modellbilde {
+  width: 100%;
+  display: block;
+}
+
+#forsidetekst {
+  text-align: center;
+  padding-left: 300px;
+  padding-right: 300px;
+  font-size: 20px;
+}
+
+#forsidehead {
+  font-size: 40px;
+}
+
+#påTopp {
+  text-align: center;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+#populaert {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+#inspirerende {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#inspirerendeBilde {
+  margin: auto;
+  width: 100%;
+}
+
+#inspirerendeTekst {
+  margin-top: 0;
+  font-size: 25px;
+  color: white;
+}
+
+#inspirerendeOverskrift {
+  font-size: 30px;
+  margin: auto;
+  color: white;
+}
+
+.bestesko {
+  display: block;
+  margin: auto;
+}
+
+.besteS {
+  display: block;
+  margin: auto;
+  width: 405px;
+  height: 390px;
+  align-content: space-around;
+}
+
+.browseshoes {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+}
+
+.skoene {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 80px;
+  margin-left: 65px
+}
+
+.aside {
+  background-color: white;
+  text-align: center;
+  font-size: 70px;
+}
+
+.merkesko {
+  display: block;
+  width: 405px;
+  height: 390px;
+  align-content: space-around;
+  margin: auto;
+}
+
+.skobilder {
+  border: solid black 1px;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 100px;
+}
+
+.expandedview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.storskobilde {
+  width: 500px;
+  margin-left: 100px;
+  margin-top: 75px;
+  display: block;
+  border: 1px solid black;
+}
+
+.info_om_sko {
+  margin-top: 75px;
+  margin-right: 100px;
+}
+
+.info_om_sko_innhold {
+  font-size: 10px;
+}
+
+.legg_til_i_handlekurv {
+  display: block;
+  width: 400px;
+}
+
+.anbefalt {
+  margin-top: 100px;
+  justify-content: center;
+}
+
+.andre_sko {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.anbefaltoverskrift {
+  margin: auto;
+}
+
+#reklame {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  background-color: #101010;
+}
+
+#premball {
+  display: block;
+  width: 650px;
+  margin: auto;
+}
+
+#fotballvideo {
+  width: 650px;
+  margin: auto;
+  padding-left: 20px;
+}
+
+#black {
+  background-color: #101010;
+}
+
+.utsolgt {
+  color: darkred;
+}
+
+#drakter {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 80px;
+  grid-row-gap: 20px;
+}
+
+.draktbilder {
+  margin-left: 34px;
+  margin-right: 34px;
+}
+
+.drakt {
+  display: block;
+  margin: auto;
+  width: 300px;
+}
+
+#stordrakt {
+  width: 100%;
+}
+
+#overskriftposter {
+  font-size: 40px;
+}
+
+select {
+  width: 200px;
+}
+
+footer {
+  color: #7A7A7A;
+}
+
+.linje {
+  display: block;
+  width: 1000px;
+  height: 100px;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.c-span2 {
+  grid-column: span 2;
+}
+
+.c-span3 {
+  grid-column: span 3;
+}
+
+.r-span2 {
+  grid-row: span 2;
+}
+
+.r-span3 {
+  grid-row: span 3;
+}

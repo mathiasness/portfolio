@@ -1,0 +1,28 @@
+p{
+  background-color: red;
+  padding-left: 10px;
+
+}
+
+h1{
+  background-color: grey;
+  padding: 30px;
+  font-size: 70px;
+
+}
+
+p,h1{
+  color: white;
+
+}
+body{
+  background: black;
+
+}
+img{
+  padding:20px
+
+}
+img{
+
+}

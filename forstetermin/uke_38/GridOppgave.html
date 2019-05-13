@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Grid Oppgave</title>
+
+    <style media="screen">
+      body{
+        background-image: url(galaxy-ngc6744.jpg);
+        padding: 100px;
+
+      }
+      header{
+        text-align: center;
+        background-color: grey;
+
+      }
+      h1{
+        border: 5px solid white;
+
+      }
+      main{
+        width: 750px;
+        margin: auto;
+
+      }
+      img{
+        display: block;
+        width: 100%;
+        margin: auto;
+        border: 2px solid white;
+      }
+
+      main{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        color: black;
+
+      }
+      main>article{
+        background-color: white;
+
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Verdensrommet</h1>
+    </header>
+
+    <main>
+
+      <article><img src="https://www.jpl.nasa.gov/spaceimages/images/thumbnailhires/PIA17563_hithumb.jpg" alt="lilla eksplosjon"><img src="https://www.jpl.nasa.gov/spaceimages/images/thumbnailhires/PIA09178_hithumb.jpg" alt="blått lys"></article>
+      <article><img class="kolonne2"src="https://www.jpl.nasa.gov/spaceimages/images/thumbnailhires/PIA18322_hithumb.jpg" alt="måne formørkelser"></article>
+      <article><img src="https://www.jpl.nasa.gov/spaceimages/images/thumbnailhires/PIA20318_hithumb.jpg" alt="mars"><img src="https://www.jpl.nasa.gov/spaceimages/images/thumbnailhires/PIA00063_hithumb.jpg" alt="atmosfaere"></article>
+      <article><img class="kolonne2"src="https://www.jpl.nasa.gov/spaceimages/images/thumbnailhires/PIA09113_hithumb.jpg" alt="planet1"></article>
+      <article><img src="https://www.jpl.nasa.gov/spaceimages/images/thumbnailhires/PIA19048_hithumb.jpg" alt="planet2"><img src="https://www.jpl.nasa.gov/spaceimages/images/thumbnailhires/PIA18847_hithumb.jpg" alt="lys3"> </article>
+      <article><img class="kolonne2" src="https://www.jpl.nasa.gov/spaceimages/images/thumbnailhires/PIA19821_hithumb.jpg" alt="stjerne"></article>
+
+
+    </main>
+
+  </body>
+</html>

@@ -1,0 +1,44 @@
+body{
+margin: 0;
+}
+header{
+display: grid;
+grid-template-columns: 2fr 5fr 1fr 1fr 1fr 1fr 1fr;
+background-color: #D00027;
+grid-gap: 5px;
+}
+header>section>a{
+text-decoration: none;
+color: white;
+padding-left: 35px;
+padding-right: 35px;
+padding-top: 50px;
+padding-bottom: 50px;
+}
+header>section>a:hover{
+background-color: darkred;
+
+}
+header>.lenke{
+  align-self: center;
+}
+#logo{
+  width: 250px;
+}
+main{
+Display: grid;
+grid-template-columns: 1fr 1fr;
+
+}
+footer{
+
+}
+.usynlig{
+  opacity: 0;
+}
+#logolenke{
+padding:0;
+}
+.C-span2{
+  grid-column: span 2;
+}
