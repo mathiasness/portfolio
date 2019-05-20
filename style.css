@@ -1,13 +1,17 @@
 body{
-  background-color: #f3f3f3;
+  background-color: #272727;
 }
 h1{
   text-align: center;
   font-size: 50px;
   color: darkred;
+  background-color: black;
+  margin-top: 0;
+  padding: 25px;
 }
 p{
   text-align: center;
+  color: white;
 }
 #nettsider{
   display: grid;
@@ -18,7 +22,10 @@ p{
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: darkred;
-  margin: 0
+  margin: 0;
+  border: 25px solid red;
+  border-radius: 45%
+
 }
 .nettsider{
 max-width: 400px;
