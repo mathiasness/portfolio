@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Oppgave 1</title>
+  </head>
+  <body>
+    <div class="">
+      <center>
+        <h1 style="font-size:80px; color: darkblue;">Wack a mouse</h1>
+        <p>trykk på musen for å få poeng!</p>
+        <span id="visPoeng">0 poeng</span>
+      </center>
+      <img id="mus" style="width: 300px; position: absolute; transition: 0.2s;" src="https://d29fhpw069ctt2.cloudfront.net/clipart/109872/preview/lemmling_Simple_cartoon_mouse_preview_460d.png">
+      <script type="text/javascript">
+        var visPoeng = document.getElementById("visPoeng"); //referer til span
+        var mus = document.getElementById("mus"); //referer til img elementet
+        var poeng = 0; //starter med 0 poeng
+        function merPoeng(){
+          poeng += 10; //øker poeng med 10
+          visPoeng.innerHTML = poeng + "poeng"; //viser antall poeng på skjermen
+          var xpos = Math.random()*(innerWidth - 100);
+          var xpos = Math.random()*(innerHeight - 100);
+          mus.style.left = xpos + "px";
+          mus.style.top = ypos + "px";
+        }
+        mus.onclick = merPoeng; //knytter klikket på figuren til funksjonen
+      </script>
+    </div>
+  </body>
+</html>
