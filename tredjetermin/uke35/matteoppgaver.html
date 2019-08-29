@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Matteoppgaver</title>
+  </head>
+  <body>
+    <h1>Sum av tall</h1>
+    <p></p>
+    <script>
+      var tall1 = 7;
+      var tall2 = 2;
+
+      var sum = tall1 + tall2; //kan bruke +, -, *, /, %, ++, --
+      var produkt = tall1 * tall2;
+
+      console.log(sum+2);
+      document.write("summen av tall1 som er " + tall1 + " og tall2 som er "  + tall2 + " er " + sum + " produktet av tall1 og tall2 er " + produkt + "<br>");
+
+
+      var bredde = prompt("skriv inn bredde til rektangelet");
+      var hoyde = prompt("skriv inn høyde til rektangelet");
+
+      var omkrets = hoyde*2 + bredde*2;
+      var areal = hoyde * bredde;
+
+      document.write("omkretsen av et rektangel med bredde " + bredde + " og høyde " + hoyde + " har omkrets lik " + omkrets + "<br>");
+      document.write("omkretsen av et rektangel med bredde " + bredde + " og høyde " + hoyde + " har areal lik " + areal);
+    </script>
+
+  </body>
+</html>

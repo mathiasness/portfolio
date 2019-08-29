@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Oppgave 2</title>
+  </head>
+  <body>
+    <h1>Oppgave 2</h1>
+    <br>
+    <h2>Invitasjon</h2>
+    <p>Hei, <span class="invitasjon"></span>. <span class="invitasjon"></span>,
+      du er ivitert til å feire min bursdag til helgen.</p>
+      <p><span class="invitasjon"></span> bursdagen skal feires på strand så
+      husk å ta med egen grillmat.</p>
+      <p><span class="invitasjon"></span>, jeg håper du kan komme! bla, bla, bla...</p>
+
+    <script>
+      var navn = prompt("skriv inn navn"); //lager en input boks for navnet til den inviterte
+      var invitasjon = document.querySelectorAll(".invitasjon");
+
+      var navn = navn.charAt(0).toUpperCase()+navn.slice(1).toLowerCase(); //gjør første bokstav til stor og resten til små
+      console.log(invitasjon);
+
+      var i = 0;
+      var lengde = invitasjon.length;
+      while (i<=lengde-1){
+        invitasjon[i].innerHTML=navn;
+        i =i+1;
+      } //siden tellingen til datamaskinen begynner på 0 så endre vi det til 1 ved å skrive -1
+    </script>
+
+  </body>
+</html>
